@@ -1,21 +1,13 @@
 import express, { Router, Request, Response } from 'express';
+import controller from './controller';
 
 const router: Router = express.Router();
+// deux id en paramètre, l'id du restaurant sponsor et l'id du restaurant
+router.post('/addSponsor', controller.addSponsor);
 
-router.post('/register', (req: Request, res: Response) => {
-  res.send('Hello, world!');
-});
+// deux id en paramètre, l'id du restaurant sponsor et l'id du restaurant
+router.delete('/deleteSponsor', controller.deleteSponsor);
 
-router.post('/login', (req: Request, res: Response) => {
-  res.json('login');
-});
-
-router.delete('/delete/{id}', (req: Request, res: Response) => {
-  res.json('delete');
-});
-
-router.put('/edit/{id}', (req: Request, res: Response) => {
-  res.json('edit');
-});
+router.get('/getSponsor/{idRestaurant}', controller.getSponsor);
 
 export default router;
