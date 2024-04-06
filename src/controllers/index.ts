@@ -6,7 +6,7 @@ const addSponsor = async (req: Request, res: Response) => {
   try{
     const order: ISponsor = {
       idSponsor: req.body.idSponsor,
-      idSponsorised: req.body.idSponsorised,
+      idSponsored: req.body.idSponsored,
     };
     const result = await Sponsor.create(order);
     console.log('result: ' + result);

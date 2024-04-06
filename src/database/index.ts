@@ -3,7 +3,7 @@ import mongoose, { Schema, model } from 'mongoose';
 
 const sponsorSchema = new Schema<ISponsor>({
   idSponsor: { type: Number, required: true },
-  idSponsorised: { type: Number, required: true },
+  idSponsored: { type: Number, required: true },
 });
 
 export const Sponsor = model<ISponsor>('Account', sponsorSchema);

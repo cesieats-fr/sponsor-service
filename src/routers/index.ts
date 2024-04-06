@@ -3,7 +3,7 @@ import controller from '../controllers';
 
 const router: Router = express.Router();
 
-router.post('/addSponsor/:idSponsor&:idSponsorised', controller.addSponsor);
+router.post('/addSponsor/:idSponsor&:idSponsored', controller.addSponsor);
 
 router.get('/getSponsor/:id', controller.getSponsor);
 
