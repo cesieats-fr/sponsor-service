@@ -1,13 +1,12 @@
-// import { Schema, model } from 'mongoose';
+import { ISponsor } from 'cesieats-service-types/src/sponsor';
+import mongoose, { Schema, model } from 'mongoose';
 
-// export const accountSchema = new Schema<IAccount>({
-//   id: { type: Number, required: true },
-//   email: { type: String, required: true },
-//   password: { type: String, required: true },
-// });
+const sponsorSchema = new Schema<ISponsor>({
+  idSponsor: { type: Number, required: true },
+  idSponsorised: { type: Number, required: true },
+});
 
-// export const Account = model<IAccount>('Account', accountSchema);
-import mongoose from 'mongoose';
+export const Sponsor = model<ISponsor>('Account', sponsorSchema);
 
 export const connectMongoose = () => {
   mongoose
