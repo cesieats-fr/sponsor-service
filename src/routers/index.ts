@@ -3,12 +3,16 @@ import controller from '../controllers';
 
 const router: Router = express.Router();
 
-router.post('/addSponsor/:idSponsor&:idSponsored', controller.addSponsor);
+// Ajoute un parrainnage
+router.post('/addSponsor', controller.addSponsor);
 
+// Retourne un parrainage
 router.get('/getSponsor/:id', controller.getSponsor);
 
+// Retourne tous les parrainages de idSponsor
 router.get('/getAllSponsor/:idSponsor', controller.getAllSponsor);
 
-router.delete('/deleteSponsor/:id', controller.deleteSponsor);
+// Supprime un parrainnage
+router.delete('/deleteSponsor', controller.deleteSponsor);
 
 export default router;

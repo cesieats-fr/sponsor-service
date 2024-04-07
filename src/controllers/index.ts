@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { ISponsor } from 'cesieats-service-types/src/sponsor';
 import { Sponsor } from '../database';
 
+// Ajoute un parrainnage
 const addSponsor = async (req: Request, res: Response) => {
   try{
     const order: ISponsor = {
@@ -17,6 +18,7 @@ const addSponsor = async (req: Request, res: Response) => {
   }
 };
 
+// Retourne un parrainage
 const getSponsor = async (req: Request, res: Response) => {
   try {
     const result = await Sponsor.findById(req.params.id);
@@ -29,6 +31,7 @@ const getSponsor = async (req: Request, res: Response) => {
   }
 };  
 
+// Retourne tous les parrainages de idSponsor
 const getAllSponsor = async (req: Request, res: Response) => {
   try {
     const filter = {idSponsor: (String)(req.params.idSponsor)};
@@ -42,6 +45,7 @@ const getAllSponsor = async (req: Request, res: Response) => {
   }
 };  
 
+// Supprime un parrainnage
 const deleteSponsor = async (req: Request, res: Response) => {
   try {
     const result = await Sponsor.findByIdAndDelete(req.body.id);
