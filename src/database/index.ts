@@ -8,20 +8,11 @@ const sponsorSchema = new Schema<ISponsor>({
 
 export const Sponsor = model<ISponsor>('Account', sponsorSchema);
 
-export const connectMongoose = () => {
-  console.log(`connexion: mongodb://${process.env.DB_URL}/`);
-  console.log(`user: ${process.env.DB_USERNAME}`);
-  console.log(`password: ${process.env.DB_PASSWORD}`);
-  mongoose
-    .connect(`mongodb://${process.env.DB_URL}/`, {
-      dbName: 'cesieats-service',
-      user: process.env.DB_USERNAME,
-      pass: process.env.DB_PASSWORD,
-    })
-    .then(() => {
-      console.log('Connected to the database');
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
+export async function connectMongoose() {
+  await mongoose.connect(`mongodb://${process.env.DB_URL}/`, {
+    dbName: 'cesieats-service',
+    user: process.env.DB_USERNAME,
+    pass: process.env.DB_PASSWORD,
+  });
+  console.log('Connected to MongoDB ');
+}
