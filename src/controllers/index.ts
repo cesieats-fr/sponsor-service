@@ -32,7 +32,7 @@ const getSponsor = async (req: Request, res: Response) => {
 };  
 
 // Retourne tous les parrainages de idSponsor
-const getAllSponsor = async (req: Request, res: Response) => {
+const getAllSponsors = async (req: Request, res: Response) => {
   try {
     const filter = {idSponsor: (String)(req.params.idSponsor)};
     const result = await Sponsor.find(filter);
@@ -40,7 +40,7 @@ const getAllSponsor = async (req: Request, res: Response) => {
     console.log('id: ' + req.params.id);
     res.status(200).json(result);
   } catch (error) {
-    console.log('[SPONSOR-SERVICE] getAllSponsor error: '+ error);
+    console.log('[SPONSOR-SERVICE] getAllSponsors error: '+ error);
     res.status(400).json({message: 'an unexpected error occurred'});
   }
 };  
@@ -60,7 +60,7 @@ const deleteSponsor = async (req: Request, res: Response) => {
 const controller = {
   addSponsor,
   getSponsor,
-  getAllSponsor,
+  getAllSponsors,
   deleteSponsor,
 };
 

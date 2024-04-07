@@ -10,7 +10,7 @@ router.post('/addSponsor', controller.addSponsor);
 router.get('/getSponsor/:id', controller.getSponsor);
 
 // Retourne tous les parrainages de idSponsor
-router.get('/getAllSponsor/:idSponsor', controller.getAllSponsor);
+router.get('/getAllSponsors/:idSponsor', controller.getAllSponsors);
 
 // Supprime un parrainnage
 router.delete('/deleteSponsor', controller.deleteSponsor);
